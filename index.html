@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitaler Setzkasten</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8cf091c824.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+    <div class="container">
+        <div id="heading">
+            <h1>Digital type case: Collection
+                <h1>
+        </div>
+
+        <ul id="site-menu">
+          <li> <a href=".\index.html" class="menu-points"> Collection </a> </li>
+          <li> <a href=".\categories.html" class="menu-points"> Categorie </a> </li>
+          <li> <a href=".\filters.html" class="menu-points"> Filter </a> </li>
+        </ul>
+
+        <div id="collections-tab">
+            <div class="functions">
+                <input class="collection-seach-bar" type="text" id="searchBar" placeholder="Search collection based on: name, color, category, etc." title="Enter a search term">
+            </div>
+
+            <div id="new-collection-button">Add Collection</div>
+            <div id="collection-container"></div>
+        </div>
+
+        <div id="cards-tab" class="hidden">
+            <button id="new-card-button">Add Card</button>
+
+            <input type="text" id="searchCard" class="search-card" placeholder="Search cards based on: name, color, category, etc." title="Enter a search term">
+            <div id="close-cards" class="fas fa-times"></div>
+
+            <div id="card-container"></div>
+        </div>
+
+        <div>
+            <div id="collection-editor" class="modal editor hidden">
+                <h1 class="editor-heading">
+                    <h1/>
+                    <input id="collection-title" type="text" title="Title" placeholder="Title">
+                    <input id="collection-comment" type="text" title="Comment" placeholder="Comment">
+                    <input id="collection-categories" type="text" title="Categorie" placeholder="Categorie">
+                    <div class="color-select">
+                        <p id="color-select-heading">Color:</p>
+                        <div id="blue" class="color-field blue" title="blue"></div>
+                        <div id="magenta" class="color-field magenta" title="magenta"></div>
+                        <div id="orange" class="color-field orange" title="orange"></div>
+                        <div id="red" class="color-field red" title="red"></div>
+                        <div id="green" class="color-field green" title="green"></div>
+                        <div id="gray" class="color-field grey" title="gray"></div>
+                        <div id="brown" class="color-field brown" title="brown"></div>
+                        <div id="white" class="color-field white" title="white"></div>
+                        <div id="black" class="color-field black" title="black"></div>
+                    </div>
+                    <div class="editor-buttons-bar">
+                        <button class="generalButton" id="button-save-new-collection" type="button">Create</button>
+                        <button id="button-delete-collection" type="button" class="hidden">Delete</button>
+                        <button class="generalButton" id="button-cancel-new-collection" type="button">Cancel</button>
+                    </div>
+            </div>
+        </div>
+
+        <div id="card-editor" class="modal cardEditor hidden ">
+            <h1 class="editor-heading">
+                <h1/>
+                <input id="card-title" type="text" title="Title" placeholder="Title">
+                <input id="card-comment" type="text" title="Comment" placeholder="Comment">
+                <div class="cardEditor-buttons-bar">
+                    <button class="generalButton" id="button-save-new-card" type="button">Create</button>
+                    <button id="button-delete-card" type="button" class="hidden">Delete</button>
+                    <button class="generalButton" id="button-cancel-new-card" type="button">Cancel</button>
+                    <div id="confirm-deleteCard" class="hidden">Do you really want to delete the Collection?
+                        <button id="button-confirm-deleteCard">Yes</button>
+                        <button id="button-cancel-deleteCard">Cancel</button>
+                    </div>
+                </div>
+        </div>
+
+        <div id="delete-window" class="modal delete-window">
+            <h1 class="delete-window-heading" class="delete-button-yes">Sure you want to delete?</h1>
+            <div class="generalButton" id="delete-yes">Yes</div>
+            <div class="generalButton" id="delete-cancel">Cancel</div>
+        </div>
+        <div id="delete-window-card" class="modal delete-window-card">
+            <h1 class="delete-window-heading" class="delete-button-yes">Sure you want to delete this Card?</h1>
+            <div class="generalButton" id="delete-yes-card">Yes</div>
+            <div class="generalButton" id="delete-cancel-card" >Cancel</div>
+        </div>
+        <div>
+
+        </div>
+
+        <div id="overlay"></div>
+
+        <script type="module" src="resources/js/index.js"></script>
+
+</body>
+
+</html>
