@@ -1,0 +1,23 @@
+{
+  "name": "projekt-starter-mme-ws19",
+  "version": "1.0.0",
+  "description": "Startercode für die Abschlussprojekte des MME-Kurses im Wintersemester 2019",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js ./app 8000",
+    "build": "node build.js",
+    "prebuild": "eslint app/resources/js/"
+  },
+  "author": "Alexander Bazo <alexander.bazo@ur.de>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "pg": "^7.18.2",
+    "react": "^16.13.0"
+  }
+}
