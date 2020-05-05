@@ -1,38 +1,38 @@
 export default class CollectionList {
     constructor(container) {
-        this.container = container
+        this.container = container;
     }
 
     render(collections, order) {
-        var cardsTab = document.querySelector('#cards-tab')
+        var cardsTab = document.querySelector('#cards-tab');
         switch (order) {
             case 'created-ascending':
-                cardsTab.classList.add('hidden')
-                collections.sort((a, b) => a.id - b.id)
-                break
+                cardsTab.classList.add('hidden');
+                collections.sort((a, b) => a.id - b.id);
+                break;
 
             case 'created-descending':
-                cardsTab.classList.add('hidden')
-                collections.sort((a, b) => b.id - a.id)
-                break
+                cardsTab.classList.add('hidden');
+                collections.sort((a, b) => b.id - a.id);
+                break;
 
             case 'alphabetical-ascending':
-                cardsTab.classList.add('hidden')
-                collections.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1)
-                break
+                cardsTab.classList.add('hidden');
+                collections.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
+                break;
 
             case 'alphabetical-descending':
-                cardsTab.classList.add('hidden')
-                collections.sort((a, b) => b.title.toLowerCase() < a.title.toLowerCase() ? -1 : 1)
-                break
+                cardsTab.classList.add('hidden');
+                collections.sort((a, b) => b.title.toLowerCase() < a.title.toLowerCase() ? -1 : 1);
+                break;
         }
 
-        this.container.innerHTML = ''
+        this.container.innerHTML = '';
 
         collections.forEach(collection => {
-            let htmlElement = this.createListElement(collection)
+            let htmlElement = this.createListElement(collection);
 
-            this.container.append(htmlElement)
+            this.container.append(htmlElement);
         })
     }
 
@@ -47,9 +47,9 @@ export default class CollectionList {
         var collectionCategories = document.createElement("div");
         var collectionDate = document.createElement("div");
         var dropDownMenu = document.createElement("div");
-        var dropDownEdit = document.createElement("a")
+        var dropDownEdit = document.createElement("a");
         var dropDownDelete = document.createElement("a");
-        var dropDownCreate = document.createElement("a")
+        var dropDownCreate = document.createElement("a");
         var collectionContainer = document.createElement("div");
 
         var date = this.getDate();
@@ -58,10 +58,10 @@ export default class CollectionList {
         collectionComment.classList.add("collectionComment");
         collectionCategories.classList.add("collectionCategories");
         collectionSettingsButton.className = "fas fa-ellipsis-h";
-        dropDownMenu.classList.add("dropdown-content")
+        dropDownMenu.classList.add("dropdown-content");
         dropDownEdit.classList.add("drop-down-edit");
         dropDownDelete.classList.add("drop-down-delete");
-        dropDownCreate.classList.add("drop-down-create")
+        dropDownCreate.classList.add("drop-down-create");
         newCollectionCard.classList.add("collection-card");
 
         collectionContainer.classList.add("create-collection-window");
@@ -96,11 +96,11 @@ export default class CollectionList {
 
 
 
-        newCollectionCard.addEventListener('click', () => this.onCollectionClicked(collection))
+        newCollectionCard.addEventListener('click', () => this.onCollectionClicked(collection));
         collectionSettingsButton.addEventListener("click", () => dropDownMenu.classList.add("show"));
-        dropDownDelete.addEventListener('click', ev => this.delete(collection.id))
-        dropDownEdit.addEventListener('click', () => this.edit(collection.id))
-        dropDownCreate.addEventListener('click', () => this.create(collection.id))
+        dropDownDelete.addEventListener('click', ev => this.delete(collection.id));
+        dropDownEdit.addEventListener('click', () => this.edit(collection.id));
+        dropDownCreate.addEventListener('click', () => this.create(collection.id));
 
         //dropDownEdit.addEventListener("click",() =>)
 

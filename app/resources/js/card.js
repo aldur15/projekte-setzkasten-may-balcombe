@@ -1,25 +1,25 @@
 export default class CollectionList {
     constructor(container) {
-        this.container = container
+        this.container = container;
     }
 
     render(cards, filter) {
-        this.container.innerHTML = ''
+        this.container.innerHTML = '';
 
         cards.forEach(card => {
             if(filter){
-                if(!this.cardContainsPhrase(card, filter))
-                    return
+                if(!this.cardContainsPhrase(card, filter));
+                    return;
             }
 
-            let htmlElement = this.createListElement(card)
+            let htmlElement = this.createListElement(card);
 
-            this.container.append(htmlElement)
+            this.container.append(htmlElement);
         })
     }
 
     cardContainsPhrase(card, phrase){
-        return card.title.includes(phrase) || card.comment.includes(phrase)
+        return card.title.includes(phrase) || card.comment.includes(phrase);
     }
 
     createListElement(card) {
@@ -35,7 +35,7 @@ export default class CollectionList {
         cardTitle.classList.add("card-title");
         cardComment.classList.add("card-comment");
         cardSettingsButton.className = "fas fa-ellipsis-h";
-        dropDownMenu.classList.add("dropdown-content")
+        dropDownMenu.classList.add("dropdown-content");
         dropDownEdit.classList.add("drop-down-edit");
         dropDownDelete.classList.add("drop-down-delete");
         //cardContainer.className = "create-collection-window";
@@ -46,7 +46,7 @@ export default class CollectionList {
         dropDownDelete.innerHTML = "Delete";
 
         newCard.appendChild(dropDownMenu);
-        newCard.appendChild(cardSettingsButton)
+        newCard.appendChild(cardSettingsButton);
         newCard.appendChild(cardTitle);
         newCard.appendChild(cardComment);
         newCard.appendChild(cardDate);
@@ -60,8 +60,8 @@ export default class CollectionList {
 
 
         cardSettingsButton.addEventListener("click", () => dropDownMenu.classList.add("show"));
-        dropDownDelete.addEventListener('click', () => this.deleteCard(card.id))
-        dropDownEdit.addEventListener('click', () => this.editCard(card.id))
+        dropDownDelete.addEventListener('click', () => this.deleteCard(card.id));
+        dropDownEdit.addEventListener('click', () => this.editCard(card.id));
 
         return newCard;
     }
